@@ -33,3 +33,10 @@ def format_time(t):
     # again, workaround dateformat input requirement
     dt = aware_datetime(2000, 1, 1, t.hour, t.minute, t.second)
     return dateformat.format(dt, 'H:i:s O')
+
+def format_datetime_epoch(dt):
+    """
+    Seconds since epoch time formatter
+    """
+    return dateformat.format(make_naive(dt), 'U')
+
